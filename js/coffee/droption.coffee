@@ -89,8 +89,3 @@ jQuery ($) ->
             # Set the value of the select to 
             droption.input.val(val)
             droption.label.text(text)
-
-
-
-    $('.select-list').droption({ select: '.the-select' })
-    $('.select-list-2').droption({ select: '.the-select-2' })

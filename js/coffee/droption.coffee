@@ -53,15 +53,22 @@ jQuery ($) ->
         showOptions: (e) ->
             e.stopPropagation()
             droption = e.data.object
+
+            # If it's not the same droption, then we need to hide the others
+            if not droption.options.is(':visible')
+                # Hide all the others
+                $('.droption .select-options').hide()
+                $('.droption .label-wrap').removeClass('open')
+                $(document).unbind('click')
+
+            # Show this droption
             droption.options.toggle()
+
             # Don't bind the click event if it's already visible
             if droption.options.is(':visible')
                 droption.wrap.addClass('open')
                 $(document).bind('click', {object: droption}, droption.hideOptions)
-            else
-                # We are toggling back, we can unbind the click event
-                droption.wrap.removeClass('open')
-                $(document).unbind('click')
+
 
         hideOptions: (e) ->
             droption = e.data.object

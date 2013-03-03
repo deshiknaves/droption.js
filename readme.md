@@ -1,9 +1,13 @@
 # Droption.js
 
+![Droption screen](http://deshiknaves.com/droption/droption.png)
 ## About
 **Droption is a simple select list replacement.**
 
 Often we need a select list that can be styled to fit the designs of our projects, but this can't be done with default select options. Droption is a simple replacement for those situations. It's very lightweight and fully customizable to your styling needs.
+
+## Demo
+<http://www.deshiknaves.com/droption>
 
 ## Requirements
 Requires jQuery 1.7 or above

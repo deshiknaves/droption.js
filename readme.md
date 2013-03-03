@@ -44,3 +44,4 @@ Finally, call droption on the element passing the select list to create the sele
 * Calculate how much space is available for the dropdown list and make the height of the options dependant on that.
 * Add more options as more testing is done.
 * Will do more browser testing and write a definitive compatibility chart. (Let me know if you run into any issues).
+* Stip width from css and make them options for the function

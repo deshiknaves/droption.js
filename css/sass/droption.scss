@@ -1,0 +1,109 @@
+/*
+|---------------------------------------------------------------------
+| Basic Select List Styles
+|---------------------------------------------------------------------
+| All styles for the select list
+|
+ */
+@import "compass";
+
+@mixin text-type($size) {
+    font-family: helvetica, sans-serif;
+    color: #666;
+    font-size: $size;
+}
+
+.the-select, .the-select-2 {
+    display: none;
+}
+
+.droption {
+    height: 34px;
+    width: 300px;
+    margin-top: 20px;
+    @include border-radius(10px);
+    @include box-shadow(#f0f0f0 0 0 10px);
+    @include text-shadow(white 1px 1px 0);
+    z-index: 60;
+    @include background-image(linear-gradient(#f9f9f9, #eee));
+
+    .arrow {
+        border-left: 1px solid #e1e1e1;
+        position: relative;
+        float: right;
+        width: 40px;
+        height: 34px;
+        display: block;
+        background: url(../images/arrows.png) no-repeat center center;
+        cursor: pointer;
+        z-index: 50;
+        @include border-corner-radius(top, right, 5px);
+        @include border-corner-radius(bottom, right, 5px);
+
+        &.open {
+            @include border-corner-radius(bottom, right, 0);
+        }
+    }
+
+    .label-wrap {
+        display: block;
+        width: 100%;
+        height: 34px;
+        border: 1px solid #e1e1e1;
+        @include background-image(linear-gradient(#f9f9f9, #eee));
+        z-index: 40;
+        @include border-radius(5px);
+
+        &.open {
+            @include border-corner-radius(bottom, right, 0);
+            @include border-corner-radius(bottom, left, 0);
+        }
+
+        .label {
+            display: block;
+            width: 100%;
+            padding: 8px 10px;
+            position: absolute;
+            z-index: 40;
+            padding-top: 9px;
+            @include text-type(14px);
+        }
+    }
+
+    .select-options {
+        width: 100%;
+        max-height: 200px;
+        border: 1px solid #e1e1e1;
+        border-top: none;
+        position: relative;
+        @include background-image(linear-gradient(#f9f9f9, #eee));
+        @include box-shadow(#ddd 0 0 5px);
+        @include border-corner-radius(bottom, left, 5px);
+        @include border-corner-radius(bottom, right, 5px);
+        overflow: scroll;
+        overflow-x: hidden;
+        z-index: 70;
+
+        .options-wrapper { 
+            margin: 0;
+            padding: 0;
+            display: block;
+
+            .option {
+                display: block;
+                padding: 5px 10px;
+                border-top: 1px solid #e1e1e1;
+                @include text-type(12px);
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #efc471;
+                }
+
+                &.first {
+                    border-top: none;
+                }
+            }
+        }
+    }
+}
